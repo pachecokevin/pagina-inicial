@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Botão Animado</title>
+    <link rel="stylesheet" href="sty.css">
+</head>
+
+<body>
+    <!-- Música de fundo -->
+    <audio id="musica" autoplay loop>
+        <source src="inicial/Always With Me - Spirited Away (Piano).mp3" type="audio/mp3">
+        <!-- Substitua com o link para sua música -->
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <!-- Som do clique -->
+    <audio id="somClique">
+        <source src="inicial/Errou (meme).mp3" type="audio/mp3"> 
+        <!-- Substitua com o link para o seu som -->
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <button id="botao" onclick="alterarPosicao()">Clique Aqui</button>
+    <script src="js.js"></script>
+
+</body>
+
+</html>

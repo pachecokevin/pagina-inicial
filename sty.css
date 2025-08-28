@@ -1,0 +1,106 @@
+       body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Fundo com cor estática */
+        body {
+            background-color: #f8e8f2;
+            /* Cor inicial suave */
+            transition: background-color 0.5s ease;
+        }
+
+        /* Estilo do botão com efeito neon e design delicado */
+        #botao {
+            position: absolute;
+            font-size: 36px;
+            /* Aumentando ainda mais o tamanho do botão */
+            padding: 40px 80px;
+            /* Tamanho do botão maior */
+            background-color: rgba(255, 99, 71, 0.8);
+            /* Cor suave */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 99, 71, 0.9), 0 0 60px rgba(255, 99, 71, 0.8), 0 0 90px rgba(255, 99, 71, 0.7);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        #botao:hover {
+            background-color: rgba(255, 99, 71, 1);
+            box-shadow: 0 0 50px rgba(255, 99, 71, 1), 0 0 100px rgba(255, 99, 71, 0.9), 0 0 150px rgba(255, 99, 71, 0.8);
+        }
+
+        /* Movimentação radical do botão */
+        .top-left {
+            top: 10%;
+            left: 10%;
+            transform: translate(0, 0);
+        }
+
+        .bottom-right {
+            top: 80%;
+            left: 80%;
+            transform: translate(-100%, -100%);
+        }
+
+        .top-right {
+            top: 10%;
+            left: 80%;
+            transform: translate(-100%, 0);
+        }
+
+        .bottom-left {
+            top: 80%;
+            left: 10%;
+            transform: translate(0, -100%);
+        }
+
+        .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .extreme-top-left {
+            top: 5%;
+            left: 5%;
+            transform: translate(0, 0);
+        }
+
+        .extreme-bottom-right {
+            top: 90%;
+            left: 90%;
+            transform: translate(-100%, -100%);
+        }
+
+        .extreme-top-right {
+            top: 5%;
+            left: 90%;
+            transform: translate(-100%, 0);
+        }
+
+        .extreme-bottom-left {
+            top: 90%;
+            left: 5%;
+            transform: translate(0, -100%);
+        }
+
+        .far-top {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .far-bottom {
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+        }
