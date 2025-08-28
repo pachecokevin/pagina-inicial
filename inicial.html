@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Botão Animado</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Fundo com cor estática */
+        body {
+            background-color: #f8e8f2;
+            /* Cor inicial suave */
+            transition: background-color 0.5s ease;
+        }
+
+        /* Estilo do botão com efeito neon e design delicado */
+        #botao {
+            position: absolute;
+            font-size: 36px;
+            /* Aumentando ainda mais o tamanho do botão */
+            padding: 40px 80px;
+            /* Tamanho do botão maior */
+            background-color: rgba(255, 99, 71, 0.8);
+            /* Cor suave */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 99, 71, 0.9), 0 0 60px rgba(255, 99, 71, 0.8), 0 0 90px rgba(255, 99, 71, 0.7);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        #botao:hover {
+            background-color: rgba(255, 99, 71, 1);
+            box-shadow: 0 0 50px rgba(255, 99, 71, 1), 0 0 100px rgba(255, 99, 71, 0.9), 0 0 150px rgba(255, 99, 71, 0.8);
+        }
+
+        /* Movimentação radical do botão */
+        .top-left {
+            top: 10%;
+            left: 10%;
+            transform: translate(0, 0);
+        }
+
+        .bottom-right {
+            top: 80%;
+            left: 80%;
+            transform: translate(-100%, -100%);
+        }
+
+        .top-right {
+            top: 10%;
+            left: 80%;
+            transform: translate(-100%, 0);
+        }
+
+        .bottom-left {
+            top: 80%;
+            left: 10%;
+            transform: translate(0, -100%);
+        }
+
+        .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .extreme-top-left {
+            top: 5%;
+            left: 5%;
+            transform: translate(0, 0);
+        }
+
+        .extreme-bottom-right {
+            top: 90%;
+            left: 90%;
+            transform: translate(-100%, -100%);
+        }
+
+        .extreme-top-right {
+            top: 5%;
+            left: 90%;
+            transform: translate(-100%, 0);
+        }
+
+        .extreme-bottom-left {
+            top: 90%;
+            left: 5%;
+            transform: translate(0, -100%);
+        }
+
+        .far-top {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .far-bottom {
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Música de fundo -->
+    <audio id="musica" autoplay loop>
+        <source src="inicial/Always With Me - Spirited Away (Piano).mp3" type="audio/mp3">
+        <!-- Substitua com o link para sua música -->
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <!-- Som do clique -->
+    <audio id="somClique">
+        <source src="inicial/Errou (meme).mp3" type="audio/mp3"> <!-- Substitua com o link para o seu som -->
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <button id="botao" onclick="alterarPosicao()">Clique Aqui</button>
+
+    <script>
+        let clickCount = 0; // Contador de cliques
+        const cores = ["#f8c8c8", "#f9d1e7", "#f2c4d3", "#f2c4a1", "#f3d1e8", "#ffd1dc", "#e2b7e1", "#fce8f1", "#f1b6d0", "#d9a6c2"]; // Cores suaves e femininas para o fundo
+        const textos = [
+            "Clique Aqui",
+            "Errou >.<",
+            "De novo?",
+            "Que mira ruim",
+            "Insistencia é o seu nome",
+            "Tu é curiosa mesmo em",
+            "O que será agora?",
+            "Mais um clique?!",
+            "Você está indo bem!",
+            "Bixa insistente",
+            "Será o último?!",
+            "Não fica brava *o*",
+            "Sabe que eu te amo né?!",
+            "Tu deve tá muito puta kkkkkk",
+        ]; // Textos para o botão
+        const botao = document.getElementById("botao");
+        const somClique = document.getElementById("somClique");
+
+        function alterarPosicao() {
+            clickCount++;
+
+            // Reproduzir o som do clique
+            somClique.play();
+
+            // Alterar a cor do fundo a cada clique
+            document.body.style.backgroundColor = cores[clickCount % cores.length];
+
+            // Alterar o texto do botão a cada clique
+            botao.innerHTML = textos[clickCount % textos.length];
+
+            // Alterar a posição do botão radicalmente a cada clique
+            if (clickCount === 1) {
+                botao.className = "top-left";
+            } else if (clickCount === 2) {
+                botao.className = "bottom-right";
+            } else if (clickCount === 3) {
+                botao.className = "top-right";
+            } else if (clickCount === 4) {
+                botao.className = "bottom-left";
+            } else if (clickCount === 5) {
+                botao.className = "center";
+            } else if (clickCount === 6) {
+                botao.className = "extreme-top-left";
+            } else if (clickCount === 7) {
+                botao.className = "extreme-bottom-right";
+            } else if (clickCount === 8) {
+                botao.className = "extreme-top-right";
+            } else if (clickCount === 9) {
+                botao.className = "extreme-bottom-left";
+            } else if (clickCount === 10) {
+                botao.className = "far-top";
+            } else if (clickCount === 11) {
+                botao.className = "far-bottom";
+            } else if (clickCount === 12) {
+                botao.className = "far-down";
+            } else if (clickCount === 13) {
+                botao.className = "extreme-bottom-right";
+            } else if (clickCount === 14) {
+                botao.className = "center";
+
+                // Após o 14º clique, abrir outra página
+                window.location.href = "https://pachecokevin.github.io/FGoes/"; // Substitua pelo link desejado
+            }
+        }
+    </script>
+</body>
+
+</html>
