@@ -2,7 +2,7 @@ let clickCount = 0; // Contador de cliques
         const cores = ["#f8c8c8", "#f9d1e7", "#f2c4d3", "#f2c4a1", "#f3d1e8", "#ffd1dc", "#e2b7e1", "#fce8f1", "#f1b6d0", "#d9a6c2"]; // Cores suaves e femininas para o fundo
         const textos = [
             "Clique Aqui",
-            "Errou >.<",
+            "Errou",
             "De novo?",
             "Que mira ruim",
             "Insistencia é o seu nome",
@@ -12,9 +12,9 @@ let clickCount = 0; // Contador de cliques
             "Você está indo bem!",
             "Bixa insistente",
             "Será o último?!",
-            "Não fica brava *o*",
+            "Não fica brava",
             "Sabe que eu te amo né?!",
-            "Tu deve tá muito puta kkkkkk",
+            "Tu deve tá muito retada kkkkkk",
         ]; // Textos para o botão
         const botao = document.getElementById("botao");
         const somClique = document.getElementById("somClique");
@@ -64,4 +64,5 @@ let clickCount = 0; // Contador de cliques
                 // Após o 14º clique, abrir outra página
                 window.location.href = "https://pachecokevin.github.io/FGoes/"; // Substitua pelo link desejado
             }
+
         }
